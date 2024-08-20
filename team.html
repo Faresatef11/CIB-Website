@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - CIB</title>
+    <link rel="icon" href="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\images\Screenshot 2024-05-20 104602.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .team-section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .team-member {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 220px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            margin: 15px 0 5px;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            margin: 0;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meet Our Team</h1>
+    </header>
+
+    <section class="team-section">
+        <h2>Our Team Members</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <a href="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\CV files\Fares Atef.html" target="_blank">
+                    <img src="C:/Users/Fares/Pictures/my photos/family photos/20230203_134802.jpg" alt="Fares">
+                </a>
+                <h3>Fares</h3>
+                <p>CEO</p>
+            </div>
+            <div class="team-member">
+                <a href="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\CV files\AbdAllah.html" target="_blank">
+                    <img src="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\images\_d12b2f3d-5beb-4cd2-816e-0e20e618e792-removebg-preview.jpg"
+                        alt="Abdallah">
+                </a>
+                <h3>Abdallah</h3>
+                <p>Front-End & back-end Developer </p>
+            </div>
+            <div class="team-member">
+                <a href="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\CV files\yassin shouky.html" target="_blank">
+                    <img src="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\images\Untitled-removebg-preview.jpg"
+                        alt="Yassin">
+                </a>
+                <h3>Yassin</h3>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="team-member">
+                <a href="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\CV files\Malek elnawawy.html" target="_blank">
+                    <img src="https://via.placeholder.com/150" alt="Malek">
+                </a>
+                <h3>Malek Elnawawy</h3>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="team-member">
+                <a href="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\CV files\yousef tarek.html" target="_blank">
+                    <img src="https://via.placeholder.com/150" alt="Yousef">
+                </a>
+                <h3>Yousef Tarek</h3>
+                <p>Front-End & Back-End Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="button" onclick="sendEmail()">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CIB. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function sendEmail() {
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+            var email = 'fa123456782013@gmail.com';
+            var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message);
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+
+</html>

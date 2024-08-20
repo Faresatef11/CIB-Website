@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIB Website Request Form</title>
+    <link rel="icon" href="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\images\Screenshot 2024-05-20 104602.jpg">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .cta-button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .hero-button {
+            background-color: #fff;
+            color: #007BFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        /* Request Form Section */
+        .request-form-section {
+            background-color: #fff;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .request-form-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Custom Budget Field */
+        #custom-budget-container {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">CIB</div>
+            <ul class="nav-links">
+                <li><a href="CIB Website.html">Home</a></li>
+                <li><a href="" target="_blank">Portfolio</a></li>
+                <li><a href="#" target="_blank">About Us</a></li>
+                <li><a href="#" target="_blank">Contact</a></li>
+                <li><a href="team.html" target="_blank">Our Team</a></li>
+            </ul>
+            <a href="#" class="cta-button">Get a Quote</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bring Your Vision to Life with a Custom Website</h1>
+        <p>Submit your request and let our experts build the perfect website for you.</p>
+        <a href="#request-form" class="hero-button">Request a Website</a>
+    </section>
+
+    <section id="request-form" class="request-form-section">
+        <h2>Submit Your Request</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="project-type">Project Type:</label>
+            <select id="project-type" name="project-type">
+                <option value="ecommerce">E-commerce</option>
+                <option value="portfolio">Portfolio</option>
+                <option value="blog">Blog</option>
+                <option value="custom">Custom</option>
+            </select>
+
+            <label for="description">Project Description:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+
+            <label for="budget">Budget Range:</label>
+            <select id="budget" name="budget" onchange="toggleCustomBudget()">
+                <option value="low">100EGP</option>
+                <option value="medium">500EGP</option>
+                <option value="high">1000EGP</option>
+                <option value="custom">Custom</option>
+            </select>
+
+            <div id="custom-budget-container">
+                <label for="custom-budget">Enter Custom Budget in EGP:</label>
+                <input type="number" id="custom-budget" name="custom-budget" placeholder="Enter your budget">
+            </div>
+
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" name="deadline">
+
+            <label for="file-upload">Upload Files:</label>
+            <input type="file" id="file-upload" name="file-upload">
+
+            <!-- Payment Method Section -->
+            <h3>Payment Information</h3>
+
+            <label for="payment-method">Choose a Payment Method:</label>
+            <select id="payment-method" name="payment-method">
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="vodafone-cash">Vodafone Cash</option>
+                <option value="instapay">Instapay</option> <!-- Added Instapay option -->
+            </select>
+
+            <!-- Credit Card Fields -->
+            <div id="credit-card-info" style="display: none;">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+
+                <label for="card-expiry">Expiry Date:</label>
+                <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY">
+
+                <label for="card-cvc">CVC:</label>
+                <input type="text" id="card-cvc" name="card-cvc" placeholder="123">
+            </div>
+
+            <!-- PayPal Info -->
+            <div id="paypal-info" style="display: none;">
+                <p>After submitting the form, you will be redirected to PayPal to complete your payment.</p>
+            </div>
+
+            <!-- Vodafone Cash Info -->
+            <div id="vodafone-cash-info" style="display: none;">
+                <p id="vodafone-cash-instruction">To pay via Vodafone Cash, please follow the instructions:</p>
+                <p id="vodafone-cash-amount">Enter the amount: <input type="number" id="vodafone-cash-amount-field"
+                        value=""></p>
+                <p>1. Dial *9# on your Vodafone line.</p>
+                <p>2. Select "Send Money" and enter the number 01010641509.</p>
+                <p>3. Enter the amount and confirm the transaction.</p>
+                <a href="https://vodafone.eg/vodafone-cash" target="_blank" class="cta-button">Pay with Vodafone
+                    Cash</a>
+            </div>
+
+            <!-- Instapay Info -->
+            <div id="instapay-info" style="display: none;">
+                <p id="instapay-instruction">To pay via Instapay, please follow the instructions:</p>
+                <p>Enter the amount: <input type="number" id="instapay-amount-field" value="" readonly></p>
+                <p>1. Open your Instapay app.</p>
+                <p>2. select send money then chose wallet and enter the phone number 01010641509</p>
+                <p id="p"></p>
+                <a href="#" class="cta-button">Pay with Instapay</a>
+            </div>
+
+            <!-- Existing submit button -->
+            <button type="submit">Send Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CIB. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to toggle custom budget field
+        function toggleCustomBudget() {
+            const budgetSelect = document.getElementById('budget');
+            const customBudgetContainer = document.getElementById('custom-budget-container');
+            if (budgetSelect.value === 'custom') {
+                customBudgetContainer.style.display = 'block';
+            } else {
+                customBudgetContainer.style.display = 'none';
+            }
+        }
+
+        // Get the payment method select element
+        const paymentMethodSelect = document.getElementById('payment-method');
+
+        // Get the various payment info containers
+        const creditCardInfo = document.getElementById('credit-card-info');
+        const paypalInfo = document.getElementById('paypal-info');
+        const vodafoneCashInfo = document.getElementById('vodafone-cash-info');
+        const instapayInfo = document.getElementById('instapay-info');
+
+        // Update payment information containers when the payment method changes
+        paymentMethodSelect.addEventListener('change', () => {
+            const paymentMethod = paymentMethodSelect.value;
+
+            // Hide all payment info containers
+            creditCardInfo.style.display = 'none';
+            paypalInfo.style.display = 'none';
+            vodafoneCashInfo.style.display = 'none';
+            instapayInfo.style.display = 'none';
+
+            // Show the selected payment info container
+            if (paymentMethod === 'credit-card') {
+                creditCardInfo.style.display = 'block';
+            } else if (paymentMethod === 'paypal') {
+                paypalInfo.style.display = 'block';
+            } else if (paymentMethod === 'vodafone-cash') {
+                vodafoneCashInfo.style.display = 'block';
+
+                // Update Vodafone Cash instruction
+                const budgetSelect = document.getElementById('budget');
+                const selectedBudget = budgetSelect.value;
+                let budgetAmount = '';
+
+                if (selectedBudget === 'low') {
+                    budgetAmount = '100 EGP';
+                } else if (selectedBudget === 'medium') {
+                    budgetAmount = '500 EGP';
+                } else if (selectedBudget === 'high') {
+                    budgetAmount = '1000 EGP';
+                } else if (selectedBudget === 'custom') {
+                    budgetAmount = document.getElementById('custom-budget').value + ' EGP';
+                }
+
+                document.getElementById('vodafone-cash-instruction').textContent = `To pay via Vodafone Cash, please enter the amount of ${budgetAmount} and follow the instructions:`;
+                document.getElementById('vodafone-cash-amount-field').value = budgetAmount.replace(' EGP', '');
+            } else if (paymentMethod === 'instapay') {
+                instapayInfo.style.display = 'block';
+
+                // Update Instapay instruction
+                const budgetSelect = document.getElementById('budget');
+                const selectedBudget = budgetSelect.value;
+                let budgetAmount = '';
+
+                if (selectedBudget === 'low') {
+                    budgetAmount = '100 EGP';
+                } else if (selectedBudget === 'medium') {
+                    budgetAmount = '500 EGP';
+                } else if (selectedBudget === 'high') {
+                    budgetAmount = '1000 EGP';
+                } else if (selectedBudget === 'custom') {
+                    budgetAmount = document.getElementById('custom-budget').value + ' EGP';
+                }
+
+                document.getElementById('instapay-instruction').textContent = `To pay via Instapay, please enter the amount of ${budgetAmount} and follow the instructions:`;
+                document.getElementById('instapay-amount-field').value = budgetAmount.replace(' EGP', '');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
